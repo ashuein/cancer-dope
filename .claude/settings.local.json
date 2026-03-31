@@ -11,7 +11,8 @@
       "Bash(where codex:*)",
       "Bash(export PATH=\"$PATH:/c/Users/Asraya Giriraj Das/AppData/Roaming/npm\")",
       "Bash(codex.cmd --version 2>&1)",
-      "Bash(export CODEX_BIN=\"C:/Users/Asraya Giriraj Das/AppData/Roaming/npm/codex.cmd\")"
+      "Bash(export CODEX_BIN=\"C:/Users/Asraya Giriraj Das/AppData/Roaming/npm/codex.cmd\")",
+      "Bash(\"D:/SOFTWARE_Projects/cancer-drug/LICENSE.tmp\")"
     ]
   }
 }

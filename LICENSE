@@ -1,18 +1,3 @@
-PrecisionOncology Pipeline
-Copyright (C) 2026
-
-ACADEMIC USE NOTICE:
-This software integrates with third-party tools that have independent
-licensing requirements. Users must independently obtain and comply
-with these licenses:
-
-  - NetMHCpan 4.1: Academic license required from DTU Health Tech
-    https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/
-  - pVACtools: Licensed under BSD-3-Clause
-  - OptiType: Licensed under MIT License
-
-================================================================================
-
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
