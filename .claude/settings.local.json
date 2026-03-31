@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(curl:*)",
+      "Bash(\"D:/SOFTWARE_Projects/cancer-drug/LICENSE_HEADER\":*)",
+      "Bash(\"D:/SOFTWARE_Projects/cancer-drug/LICENSE\")",
+      "Skill(codex:rescue)",
+      "Bash(where codex:*)",
+      "Bash(export PATH=\"$PATH:/c/Users/Asraya Giriraj Das/AppData/Roaming/npm\")",
+      "Bash(codex.cmd --version 2>&1)",
+      "Bash(export CODEX_BIN=\"C:/Users/Asraya Giriraj Das/AppData/Roaming/npm/codex.cmd\")"
+    ]
+  }
+}

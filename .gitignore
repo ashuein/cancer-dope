@@ -1,0 +1,174 @@
+# ====================== Python ======================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# MyPy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# ====================== Node.js / TypeScript ======================
+node_modules/
+dist/
+.cache/
+*.tsbuildinfo
+.npm
+.eslintcache
+.env.local
+.env.*.local
+
+# ====================== Bioinformatics Data ======================
+# Protein structures
+*.pdb
+*.pdbx
+*.mmcif
+*.cif
+
+# Genomic sequences
+*.fasta
+*.fa
+*.fasta.gz
+*.fa.gz
+*.fastq
+*.fq
+*.fastq.gz
+*.fq.gz
+
+# Variant files
+*.vcf
+*.vcf.gz
+*.vcf.gz.tbi
+*.bcf
+
+# Alignment files
+*.sam
+*.bam
+*.bai
+*.cram
+*.crai
+
+# BLAST databases
+*.nin
+*.nhr
+*.nsq
+*.ndb
+*.njs
+*.not
+*.ntf
+*.nto
+*.pin
+*.phr
+*.psq
+*.pdb_blast
+*.pal
+*.psi
+
+# Other bioinformatics
+*.aln
+*.msf
+*.phy
+*.nex
+*.dcd
+*.trj
+*.xtc
+*.mol2
+*.sdf
+*.xyz
+
+# ====================== Tool Outputs ======================
+optitype_results/
+pvactools_output/
+fpocket_output/
+blast_results/
+netmhcpan_predictions/
+deepimmuno_output/
+vep_output/
+dndscv_output/
+
+# ====================== Database ======================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# ====================== Docker ======================
+docker-compose.override.yml
+
+# ====================== Environment ======================
+.env
+.env.local
+.env.development
+.env.production
+.env.*
+!.env.example
+
+# ====================== IDE ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# ====================== OS ======================
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# ====================== Internal Planning Docs ======================
+# Keep only README.md, LICENSE, and architecture docs tracked.
+# All other planning/setup docs are local-only working files.
+docs/precision-oncology-pipeline-plan-v1.md
+docs/dependency-setup-guide.md
+docs/task-list.md
+
+# ====================== Project Data ======================
+data/
+uploads/
+output/
+results/
+cache/
+logs/
+*.log
+tmp/
+temp/
