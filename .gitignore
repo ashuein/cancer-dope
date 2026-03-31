@@ -172,3 +172,4 @@ logs/
 *.log
 tmp/
 temp/
+docs/
