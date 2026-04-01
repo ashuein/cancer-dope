@@ -163,7 +163,8 @@ docs/dependency-setup-guide.md
 docs/task-list.md
 
 # ====================== Project Data ======================
-data/
+data/*
+!data/.gitkeep
 uploads/
 output/
 results/
@@ -172,5 +173,4 @@ logs/
 *.log
 tmp/
 temp/
-docs/
 .claude/

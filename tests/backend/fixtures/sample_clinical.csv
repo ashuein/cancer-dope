@@ -1,0 +1,8 @@
+date,event_type,description,value
+2024-01-15,diagnosis,Initial osteosarcoma diagnosis,
+2024-02-01,treatment,MAP chemotherapy cycle 1,
+2024-03-15,imaging,MRI assessment - partial response,
+2024-04-01,treatment,MAP chemotherapy cycle 2,
+2024-05-10,procedure,Limb salvage surgery,
+2024-06-15,lab,ALP,145.0
+2024-07-01,treatment,Adjuvant chemotherapy cycle 1,

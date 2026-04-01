@@ -1,0 +1,4 @@
+# pVACtools isolated environment (Python 3.8)
+pvactools==4.0.1
+flask==2.3.3
+gunicorn==21.2.0

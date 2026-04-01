@@ -1,0 +1,91 @@
+# PrecisionOncology Portal — Docker Compose
+#
+# First-time setup: run scripts/setup.sh to create .env from .env.example
+# and initialize data directories before building.
+
+services:
+  # --- Frontend ---
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      - VITE_API_URL=http://localhost:8000
+
+  # --- API ---
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - artifact-data:/app/data
+      - reference-data:/app/data/reference
+    env_file:
+      - path: .env
+        required: false
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # --- Workers ---
+  worker-core:
+    build:
+      context: .
+      dockerfile: docker/worker-core.Dockerfile
+    volumes:
+      - ./backend:/app/backend
+      - artifact-data:/app/data
+      - reference-data:/app/data/reference
+    env_file:
+      - path: .env
+        required: false
+    depends_on:
+      api:
+        condition: service_healthy
+
+  worker-pvactools:
+    build:
+      context: .
+      dockerfile: docker/worker-pvactools.Dockerfile
+    volumes:
+      - ./backend:/app/backend
+      - artifact-data:/app/data
+    env_file:
+      - path: .env
+        required: false
+    depends_on:
+      api:
+        condition: service_healthy
+
+  worker-r:
+    build:
+      context: .
+      dockerfile: docker/worker-r.Dockerfile
+    volumes:
+      - ./backend:/app/backend
+      - artifact-data:/app/data
+      - reference-data:/app/data/reference
+    env_file:
+      - path: .env
+        required: false
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  artifact-data:
+  reference-data:

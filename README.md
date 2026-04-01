@@ -1,6 +1,6 @@
 # PrecisionOncology Pipeline
 
-> **Status: Planning stage.** The repository currently contains design documents only. The architecture, commands, endpoints, and task list below describe the intended implementation, not the current repo state.
+> **Status: Phase 1 scaffold complete.** The repository contains a working project skeleton (FastAPI backend, Vue 3 + TypeScript frontend, Docker Compose, test foundation) but no pipeline logic yet. Analysis modules, data processing, and visualization pages described below are planned — not implemented.
 
 An open-source, Dockerized oncology analysis pipeline and portal that accepts raw or processed patient datasets, produces versioned analysis artifacts, and serves osteosarc-style visualization pages from those artifacts.
 
@@ -152,20 +152,20 @@ Track 1 and Track 2 remain in scope, but they are now modules within a broader a
 
 ## Planned Frontend Routes
 
-- `/`
-- `/cases/:caseId`
-- `/cases/:caseId/timeline`
-- `/cases/:caseId/rnaseq`
-- `/cases/:caseId/scrna`
-- `/cases/:caseId/gsea`
-- `/cases/:caseId/cnv`
-- `/cases/:caseId/bams`
-- `/cases/:caseId/vaccines`
-- `/cases/:caseId/imaging`
-- `/cases/:caseId/spatial`
-- `/cases/:caseId/data`
-- `/cases/:caseId/track1`
-- `/cases/:caseId/track2`
+- `/` --- Case list
+- `/cases/:caseId` --- Case overview
+- `/cases/:caseId/timeline` --- Clinical timeline
+- `/cases/:caseId/track1` --- Neoantigen pipeline
+- `/cases/:caseId/track2` --- Drug target pipeline
+- `/cases/:caseId/bulk-rna` --- Bulk RNA expression
+- `/cases/:caseId/scrna` --- Single-cell RNA
+- `/cases/:caseId/gsea` --- Pathway enrichment
+- `/cases/:caseId/cnv` --- Copy number variation
+- `/cases/:caseId/bam` --- BAM browser
+- `/cases/:caseId/vaccines` --- Vaccine overlap
+- `/cases/:caseId/imaging` --- Pathology imaging
+- `/cases/:caseId/spatial` --- Spatial transcriptomics
+- `/cases/:caseId/catalog` --- Data catalog
 
 ---
 
