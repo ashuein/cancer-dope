@@ -1,12 +1,11 @@
 """Shared test fixtures for backend tests."""
 
-import pytest
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from backend.db.models import Base
 from backend.db.database import get_db, set_session_factory_override
+from backend.db.models import Base
 from backend.main import app
 
 
