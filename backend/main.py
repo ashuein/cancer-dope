@@ -10,7 +10,7 @@ from backend.config.settings import settings
 from backend.db.database import engine
 from backend.db.models import Base
 from backend.middleware.errors import ErrorHandlerMiddleware
-from backend.routers import artifacts, cases, health, inputs, ws
+from backend.routers import artifacts, cases, health, inputs, workflows, ws
 
 logging.basicConfig(
     level=getattr(logging, settings.log_level.upper(), logging.INFO),
@@ -54,4 +54,5 @@ app.include_router(health.router)
 app.include_router(cases.router)
 app.include_router(artifacts.router)
 app.include_router(inputs.router)
+app.include_router(workflows.router)
 app.include_router(ws.router)

@@ -196,6 +196,9 @@ SQLite is planned for metadata and provenance. Large files remain on disk as reg
 
 - [Architecture Assessment](docs/architecture-assessment.md) - Canonical architecture direction
 - [Architecture Diagrams](docs/architecture-diagram.md) - Runtime, workflow, and page-dependency diagrams
+- [Implementation Task List](docs/implementation-task-list.md) - Parallel workstream plan and milestone checklist
+- [Workflow Manager Decision](docs/workflow-manager-decision.md) - Decision record selecting Nextflow
+- [Data Contracts](docs/data-contracts.md) - Planning baseline for entities, manifests, artifacts, and visualization datasets
 - [Dependency Setup Guide](docs/dependency-setup-guide.md) - Planned container and dependency design
 - [Task List](docs/task-list.md) - Granular implementation checklist
 - [Osteosarc Webpage Analysis](docs/osteosarc_webpage_analysis.md) - Output/visualization anchor document

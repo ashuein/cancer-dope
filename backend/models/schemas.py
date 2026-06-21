@@ -1,9 +1,9 @@
 """Pydantic schemas for API request/response models."""
 
 from datetime import datetime
-from typing import Literal
+from typing import Any, Literal
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 # Valid status transitions for workflow entities
 RunStatusLiteral = Literal["pending", "running", "completed", "failed", "cancelled"]
@@ -54,6 +54,37 @@ class RunResponse(BaseModel):
     started_at: datetime | None
     completed_at: datetime | None
     created_at: datetime
+
+
+# ---------- Workflow launch ----------
+
+
+class WorkflowLaunchRequest(BaseModel):
+    """Request to prepare or launch a case workflow."""
+
+    dry_run: bool = True
+    workflow_path: str | None = None
+    work_dir: str | None = None
+    output_dir: str | None = None
+    params: dict[str, Any] = Field(default_factory=dict)
+    profiles: list[str] = Field(default_factory=list)
+    revision: str | None = None
+    config_path: str | None = None
+    resume: bool = False
+
+
+class WorkflowLaunchResponse(BaseModel):
+    """Workflow command metadata and created run information."""
+
+    run: RunResponse
+    dry_run: bool
+    launched: bool
+    pid: int | None = None
+    command: list[str]
+    cwd: str
+    workflow_path: str
+    work_dir: str
+    output_dir: str
 
 
 # ---------- StepRun ----------
@@ -128,7 +159,14 @@ class RunEvent(BaseModel):
 
     run_id: int
     step_run_id: int | None = None
-    event_type: Literal["run_started", "step_started", "step_completed", "step_failed", "run_completed", "run_failed"]
+    event_type: Literal[
+        "run_started",
+        "step_started",
+        "step_completed",
+        "step_failed",
+        "run_completed",
+        "run_failed",
+    ]
     module: str | None = None
     step_name: str | None = None
     error_message: str | None = None

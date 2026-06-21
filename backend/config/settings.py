@@ -1,6 +1,7 @@
 """Application settings loaded from environment variables."""
 
 from pathlib import Path
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -45,6 +46,10 @@ class Settings(BaseSettings):
 
     # Tool paths
     netmhcpan_path: str = ""
+    nextflow_binary: str = "nextflow"
+    nextflow_workflow_path: Path = Path("./workflows/nextflow/main.nf")
+    nextflow_work_dir: Path = Path("./data/nextflow/work")
+    nextflow_launch_cwd: Path = Path(".")
 
     # Module flags
     module_timeline: bool = True
